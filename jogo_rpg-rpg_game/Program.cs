@@ -1,6 +1,6 @@
 ﻿#nullable disable
-using jogo_rpg_rpg_game.src.Entities;
-//Entrada dos jogadores:
+using jogo_rpg.src.Entities;
+
 Players[] players = new Players[2];
 int iPlayers = 0;
 Console.WriteLine("Insira o nome do jogador 1:");
@@ -27,7 +27,7 @@ if (first == 1){
 Console.WriteLine(@$"O jogador {players[iPlayers].name} irá começar.
 ");
 
-while ((player1.alive == true && player2.alive == true) || monster.monsterAlive == true){
+while ((player1.healthPoint == 0 && player2.healthPoint == 0) || monster.healthPointMonster == 0){
 
     string playDice(){
     Console.WriteLine("    Pressione 1 para jogar os dados de ataque.");
@@ -49,7 +49,6 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
             Console.WriteLine($"{players[iPlayers].name} está agora com {players[iPlayers].healthPoint} de HP.");
         } else {
             Console.WriteLine($"O jogador {players[iPlayers].name} morreu.");
-            players[iPlayers].alive = false;
         }
     } else if (diceValue > 1 && diceValue < 10){
         Console.WriteLine($"O jogador {players[iPlayers].name} errou o golpe.");
@@ -64,10 +63,10 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
             if (monster.healthPointMonster != 0){
                 Console.WriteLine($"{monster.monsterName} está agora com {monster.healthPointMonster} de HP.");
             } else {
-                if (player1.alive == false){ //Colocando um "in memoriam" na mensagem de vitória para caso um dos jogadores tenha morrido.
+                if (player1.healthPoint == 0){ 
                 Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} (in  memorian) e {player2.name} venceu a partida. Parabéns!");
                break;
-            } else if(player2.alive == false){
+            } else if(player2.healthPoint == 0){
                 Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} e    {player2.name} (in memorian) venceu a partida. Parabéns!");
                 break;
             } else{
@@ -78,10 +77,10 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
         }
     } else {
         Console.WriteLine(@$"O jogador {players[iPlayers].name} acertou um golpe crítico no monstro {monster.monsterName}.");
-        if (player1.alive == false){ //Colocando um "in memorian" na mensagem de vitória para caso um dos jogadores tenha morrido.
+        if (player1.healthPoint == 0){ 
             Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} (in memorian) e {player2.name} venceu a partida. Parabéns!");
             break;
-        } else if(player2.alive == false){
+        } else if(player2.healthPoint == 0){
             Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} e {player2.name} (in memorian) venceu a partida. Parabéns!");
             break;
         } else{
@@ -91,16 +90,16 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
     }
 
     //Verificação de morte.
-    if (player1.alive == false && player2.alive == false){
+    if (player1.healthPoint == 0 && player2.healthPoint == 0){
         Console.WriteLine($"A equipe {player1.name} e {player2.name} foi derrotada. O monstro {monster.monsterName} venceu a partida.");
         break;
     }
     //Declarando que um player morreu e não pode mais ser chamado para batalha.
     int target = monster.Target();
-    if (player1.alive == false){
+    if (player1.healthPoint == 0){
         target = 1;
     }
-    if (player2.alive == false){
+    if (player2.healthPoint == 0){
         target = 0;
     }
     //Vez do monstro.  
@@ -117,10 +116,10 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
         if (monster.healthPointMonster != 0){
             Console.WriteLine($"{monster.monsterName} está agora com {monster.healthPointMonster} de HP.");
         } else {
-            if (player1.alive == false){ //Colocando um "in memorian" na mensagem de vitória para caso um dos jogadores tenha morrido.
+            if (player1.healthPoint == 0){ //Colocando um "in memoriam" na mensagem de vitória para caso um dos jogadores tenha morrido.
                 Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} (in memorian) e {player2.name} venceu a partida. Parabéns!");
                 break;
-            } else if(player2.alive == false){
+            } else if(player2.healthPoint == 0){
                 Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} e {player2.name} (in memorian) venceu a partida. Parabéns!");
                 break;
             } else{
@@ -149,24 +148,24 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
         Console.WriteLine(@$"O monstro {monster.monsterName} acertou um golpe crítico no jogador {players[target].name}.
         O jogador {players[target].name} morreu.
         ");
-        players[target].alive = false;
+        players[target].healthPoint = 0;
     }
     
-    //Trocando a vez dos jogadores.
+    //Trocando de jogador.
     if (iPlayers == 1){
         iPlayers = 0;
     } else {
         iPlayers = 1;
     }
     //Declarando que um player morreu e não pode mais ser chamado para batalha.
-    if (player1.alive == false){
+    if (player1.healthPoint == 0){
         iPlayers = 1;
     }
-    if (player2.alive == false){
+    if (player2.healthPoint == 0){
         iPlayers = 0;
     }
 
-    if (player1.alive == false && player2.alive == false){
+    if (player1.healthPoint == 0 && player2.healthPoint == 0){
         Console.WriteLine($"A equipe {player1.name} e {player2.name} foi derrotada. O monstro {monster.monsterName} venceu a partida.");
         break;
     }
