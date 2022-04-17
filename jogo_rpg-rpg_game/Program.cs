@@ -34,7 +34,7 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
         string userPlayDice = Console.ReadLine();
         return userPlayDice;
     }
-    string userPlayDice = playDice(); //serve pra algo??
+    string userPlayDice = playDice();
     switch (userPlayDice){
         case "1":
             break;
@@ -78,7 +78,7 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
         }
     } else {
         Console.WriteLine(@$"O jogador {players[iPlayers].name} acertou um golpe crítico no monstro {monster.monsterName}.");
-        if (player1.alive == false){ //Colocando um "in memoriam" na mensagem de vitória para caso um dos jogadores tenha morrido.
+        if (player1.alive == false){ //Colocando um "in memorian" na mensagem de vitória para caso um dos jogadores tenha morrido.
             Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} (in memorian) e {player2.name} venceu a partida. Parabéns!");
             break;
         } else if(player2.alive == false){
@@ -117,7 +117,7 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
         if (monster.healthPointMonster != 0){
             Console.WriteLine($"{monster.monsterName} está agora com {monster.healthPointMonster} de HP.");
         } else {
-            if (player1.alive == false){ //Colocando um "in memoriam" na mensagem de vitória para caso um dos jogadores tenha morrido.
+            if (player1.alive == false){ //Colocando um "in memorian" na mensagem de vitória para caso um dos jogadores tenha morrido.
                 Console.WriteLine($"O monstro {monster.monsterName} foi derrotado. A equipe {player1.name} (in memorian) e {player2.name} venceu a partida. Parabéns!");
                 break;
             } else if(player2.alive == false){
@@ -152,7 +152,7 @@ while ((player1.alive == true && player2.alive == true) || monster.monsterAlive 
         players[target].alive = false;
     }
     
-    //Trocando de jogador.
+    //Trocando a vez dos jogadores.
     if (iPlayers == 1){
         iPlayers = 0;
     } else {
