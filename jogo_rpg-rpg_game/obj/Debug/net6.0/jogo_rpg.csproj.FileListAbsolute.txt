@@ -1,0 +1,15 @@
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\bin\Debug\net6.0\jogo_rpg.exe
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\bin\Debug\net6.0\jogo_rpg.deps.json
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\bin\Debug\net6.0\jogo_rpg.runtimeconfig.json
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\bin\Debug\net6.0\jogo_rpg.dll
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\bin\Debug\net6.0\jogo_rpg.pdb
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.csproj.AssemblyReference.cache
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.AssemblyInfoInputs.cache
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.AssemblyInfo.cs
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.csproj.CoreCompileInputs.cache
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.dll
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\refint\jogo_rpg.dll
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.pdb
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\jogo_rpg.genruntimeconfig.cache
+C:\Users\bianc\Documents\Meus_projetos\jogo_rpg\obj\Debug\net6.0\ref\jogo_rpg.dll
